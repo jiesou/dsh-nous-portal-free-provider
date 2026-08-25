@@ -350,6 +350,8 @@ const piAuth = (): { credentials: CredentialStore, authContext: AuthContext } =>
       apiKeyEnv: credentialRef(apiKeyRefName),
       streamIdleTimeoutMs: 300_000,
       maxRequestImageBytes: 20 * 1_048_576,
+      requestImagePixelBudget: 4_194_304,
+      requestImageMaxBytes: 1_048_576,
       retryPolicy: resolveRetryPolicy({ mode: 'always' }, `${name}: retryPolicy`),
       piProvider: createProvider<'openai-completions'>({
         id: PROVIDER,
